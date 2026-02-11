@@ -9,7 +9,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
   <title>BLOODMONEY Unblocked | StaticQuasar931 Games</title>
-  <meta name="description" content="Play BLOODMONEY unblocked RPG game in your browser on StaticQuasar931. Retro RPG-style BLOODMONEY unblocked game that runs fullscreen with keyboard and mobile controls, designed to work at school on Chromebooks, at work, and at home.">
+  <meta name="description" content="Play BLOODMONEY unblocked RPG game in your browser on StaticQuasar931. Retro RPG-style BLOODMONEY unblocked game that runs with keyboard and mobile controls, designed to work at school on Chromebooks, at work, and at home.">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="theme-color" content="#000000">
 
@@ -23,7 +23,7 @@
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="BLOODMONEY Unblocked RPG Game - StaticQuasar931">
-  <meta property="og:description" content="BLOODMONEY unblocked game by StaticQuasar931. Play the retro RPG-style BLOODMONEY fullscreen in your browser, tuned to work at school, on Chromebooks, and at home.">
+  <meta property="og:description" content="BLOODMONEY unblocked game by StaticQuasar931. Play the retro RPG-style BLOODMONEY in your browser, tuned to work at school, on Chromebooks, and at home.">
   <meta property="og:url" content="https://sites.google.com/view/staticquasar931/gm3z/bloodmoney">
   <meta property="og:image" content="https://cdn.jsdelivr.net/gh/StaticQuasar931/Bloodmoney@main/icon/icon.png">
 
@@ -176,8 +176,7 @@
     </div>
     <div id="loadingBarOuter"><div id="loadingBarInner"></div></div>
     <div id="loadingHint">
-      Tip: Aim for the face. That usually works best here.<br>
-      If this screen stays for more than 30 seconds, try refreshing this page.
+      Tip: If this screen stays for more than 30 seconds, try refreshing this page.
     </div>
   </div>
 
@@ -200,43 +199,6 @@
   <script>
     // Leave warning
     window.onbeforeunload = () => "Leave the BLOODMONEY page? Your progress may not be saved.";
-
-    // Fullscreen canvas sizing (safer than setInterval, updates live)
-    (function(){
-      const ids = ["GameCanvas", "GameVideo", "UpperCanvas"];
-      function apply(){
-        const maxW = window.innerWidth || document.documentElement.clientWidth || 0;
-        const maxH = window.innerHeight || document.documentElement.clientHeight || 0;
-        if (!maxW || !maxH) return;
-
-        let w = 0, h = 0;
-        if ((maxW * 0.75) > maxH) {
-          h = maxH;
-          w = Math.floor((maxH / 3) * 4);
-        } else {
-          w = maxW;
-          h = Math.floor((maxW / 4) * 3);
-        }
-
-        ids.forEach((id)=>{
-          const el = document.getElementById(id);
-          if (!el) return;
-          el.style.width = w + "px";
-          el.style.height = h + "px";
-        });
-      }
-
-      const rafApply = () => requestAnimationFrame(apply);
-      window.addEventListener("resize", rafApply, { passive:true });
-      window.addEventListener("orientationchange", rafApply, { passive:true });
-
-      const mo = new MutationObserver(()=>rafApply());
-      mo.observe(document.documentElement, { childList:true, subtree:true });
-
-      setTimeout(rafApply, 0);
-      setTimeout(rafApply, 300);
-      setTimeout(rafApply, 1200);
-    })();
 
     // Loading overlay progress: fake progress then auto-hide when game canvas is ready
     (function () {
@@ -279,7 +241,7 @@
       }, 35000);
     })();
 
-    // support mobile ----------------------------------------------------------------
+    // support mobile (UNCHANGED, same as original) -----------------------------------
     (function() {
       var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
       if (!isMobile) return;
@@ -292,7 +254,6 @@
           internal.style = "position: relative; width: 100%; height: 100%;";
           zoneStatic.appendChild(internal);
 
-          // nipplejs joystick
           var joystick = nipplejs.create({
             mode: "semi",
             zone: internal,
@@ -331,7 +292,7 @@
               + "display: flex;"
               + "align-items: center;"
               + "justify-content: center;"
-              + "font-family: system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;"
+              + "font-family: sans-serif;"
               + "font-size: 3vw;"
               + "border-radius: 50%;";
             button.innerText = text;
@@ -463,7 +424,7 @@
     <h1>BLOODMONEY unblocked RPG game by StaticQuasar931</h1>
     <p>
       BLOODMONEY is a retro RPG-style BLOODMONEY unblocked game running directly in your browser using the StaticQuasar931 Bloodmoney repository.
-      This is the full playable unblocked game, not a launcher, with fullscreen canvas sizing and optional mobile touch controls.
+      This is the full playable unblocked game, not a launcher, with default RPG Maker sizing and optional mobile touch controls.
       If you are on a school Chromebook and this BLOODMONEY unblocked version ever fails, visit the StaticQuasar931 games list for more
       931 games, backup pages, and other unblocked game and g@me options designed to work at school, at work, and at home.
       More links: https://sites.google.com/view/staticquasar931/gm3z and https://sites.google.com/view/staticquasar931
